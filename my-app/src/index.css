@@ -1,0 +1,203 @@
+@import url(reset.css);
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.main-content {
+  padding: 100px;
+  background: rgb(255,246,105);
+}
+
+.aside-left {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 150px;
+  background: red;
+  text-align: center;
+  border-radius: 0 20px 20px 0;
+}
+
+.header {
+  background: rgb(87, 17, 17);
+  text-align: center;
+  padding: 50px;
+  font-size: 34px;
+  font-weight: bold;
+  background: linear-gradient(to bottom, rgb(12,10,206) 0%, rgb(255,246,105) 100%);
+}
+
+.aside-buttons {
+  margin: 60px 0;
+}
+
+.aside-buttons a {
+  padding: 15px 20px;
+  background: rgb(3, 3, 3);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 10%;
+  color: red;
+}
+
+.aside-buttons a:hover {
+  -webkit-box-shadow: -4px 0px 31px 24px rgba(0,0,0,0.26); 
+  box-shadow: -4px 0px 31px 14px rgba(0,0,0,0.26);
+}
+
+.nut_wrap {
+  margin: 0 auto;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  
+}
+.nut_3d {
+  margin: auto;
+  position: relative;
+  height: 400px;
+  width: 500px;
+  transform-style: preserve-3d;
+
+}
+.nut_3d>div {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 10px;
+  opacity: 0.9;
+  border: solid 1px #ff0000;
+  color: #ffffff;
+  transition: transform 0.2s ease-in;
+}
+.front {
+  width: 150px;
+  height: 60px;
+  background:radial-gradient(circle, transparent 35%, rgb(66, 60, 60) 35%);
+  transform: translateZ(50px);
+  position: relative;
+}
+
+.back {
+  width: 150px;
+  height: 60px;
+  background:radial-gradient(circle, transparent 35%, rgb(66, 60, 60) 35%);
+  transform: translateZ(-50px);
+  position: relative;
+}
+.front:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 62px;
+  border-top: 45px solid rgb(66, 60, 60);
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+
+}
+.front:after {
+  content: '';
+  bottom: 100%;
+  position: absolute;
+  left: 0px;
+  width: 62px;
+  border-bottom: 45px solid rgb(66, 60, 60);
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+}
+.back:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 62px;
+  border-top: 45px solid rgb(66, 60, 60);
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+
+}
+.back:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0px;
+  width: 62px;
+  border-bottom: 45px solid rgb(66, 60, 60);
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+}
+.left {
+  transform: rotateY(270deg) translateX(-50px);
+  transform-origin: center left;
+  width: 100px;
+  height: 60px;
+  background: rgb(66, 60, 60);
+}
+.right {
+  transform: rotateY(-270deg) translateZ(100px);
+  width: 100px;
+  height: 60px;
+  background: rgb(66, 60, 60);
+}
+.top {
+  transform: rotateX(-270deg) translateZ(45px) translateX(45px) translateY(-50px);
+  transform-origin: top center;
+  background: rgb(66, 60, 60);
+  width: 62px;
+  height: 100px;
+}
+.bottom {
+  transform: rotateX(270deg) translateY(50px) translateX(45px) translateZ(5px);
+  transform-origin: bottom center;
+  background: rgb(66, 60, 60);
+  width: 62px;
+  height: 100px;
+}
+.left_top {
+  background: rgb(66, 60, 60);
+  width: 100px;
+  height: 68px;
+  transform: rotateY(270deg) rotateX(45deg) translateY(-20px) translateZ(58px);
+}
+.right_bottom {
+  background: rgb(66, 60, 60);
+  width: 100px;
+  height: 62px;
+  transform: rotateY(270deg) rotateX(45deg) translateY(-20px) translateZ(-92px); 
+}
+.right_top {
+  background: rgb(66, 60, 60);
+  width: 100px;
+  height: 62px;
+  transform: rotateY(-270deg) rotateX(45deg) translateY(17px) translateZ(95px);
+}
+.left_bottom {
+  background: rgb(66, 60, 60);
+  width: 100px;
+  height: 62px;
+  transform: rotateY(-270deg) rotateX(45deg) translateY(17px) translateZ(-55px);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.nut_3d {
+  animation: rotate 5s infinite linear;
+}
