@@ -1,0 +1,17 @@
+.smile-box {
+    background: red;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 500px;
+    padding: 0 30px;
+}
+
+.smile-box + .smile-box {
+    margin-left: 5%;
+}
+.smile-box p {
+    font-size: 60px;
+}
